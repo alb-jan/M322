@@ -1,0 +1,210 @@
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZMitt AG</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="bg-white text-lg relative">
+<nav class="bg-white border-gray-200 fixed left-0 top-0 w-full z-50">
+    <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="index.html" class="flex items-center space-x-3">
+            <span class="self-center text-2xl font-semibold whitespace-nowrap">ZMitt</span>
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0">
+                <li>
+                    <a href="index.html" class="rounded-full py-3 px-10 bg-gray-600 text-white">
+                        Abbrechen
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="relative flex h-full w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5">
+    <div class="mt-20">
+        <div class="relative h-10 w-full min-w-[200px]">
+            <label for="automat" class="block mb-2 text-sm font-medium text-gray-900">Automat</label>
+            <select id="automat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <option value="" selected>Automat auswählen</option>
+                <option value="1">BBBaden</option>
+                <option value="1">Bahnhof</option>
+            </select>
+
+            <label for="zeitfenster" class="block mb-2 text-sm font-medium text-gray-900 mt-5">Zeitfenster</label>
+            <select id="zeitfenster" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <option value="" selected>Zeitfenster auswählen</option>
+                <option value="1">12:00 Uhr</option>
+                <option value="1">13:00 Uhr</option>
+                <option value="1">14:00 Uhr</option>
+            </select>
+            <hr class="text-gray-200 mt-8 mb-8">
+        </div>
+    </div>
+</div>
+<div id="wait" class="absolute top-[40px] h-[calc(100vh-40px)] left-[20rem] w-[calc(100vw-20rem)] flex items-center justify-center">
+    <svg class="stencil--easier-to-select " width="159" height="159" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="159" height="159" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-09660627 * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-09660627" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><g><path d="M15.1,19.37l1,1.74c-0.96,0.44-2.01,0.73-3.1,0.84v-2.02C13.74,19.84,14.44,19.65,15.1,19.37z M4.07,13H2.05 c0.11,1.1,0.4,2.14,0.84,3.1l1.74-1C4.35,14.44,4.16,13.74,4.07,13z M15.1,4.63l1-1.74C15.14,2.45,14.1,2.16,13,2.05v2.02 C13.74,4.16,14.44,4.35,15.1,4.63z M19.93,11h2.02c-0.11-1.1-0.4-2.14-0.84-3.1l-1.74,1C19.65,9.56,19.84,10.26,19.93,11z M8.9,19.37l-1,1.74c0.96,0.44,2.01,0.73,3.1,0.84v-2.02C10.26,19.84,9.56,19.65,8.9,19.37z M11,4.07V2.05 c-1.1,0.11-2.14,0.4-3.1,0.84l1,1.74C9.56,4.35,10.26,4.16,11,4.07z M18.36,7.17l1.74-1.01c-0.63-0.87-1.4-1.64-2.27-2.27 l-1.01,1.74C17.41,6.08,17.92,6.59,18.36,7.17z M4.63,8.9l-1.74-1C2.45,8.86,2.16,9.9,2.05,11h2.02C4.16,10.26,4.35,9.56,4.63,8.9z M19.93,13c-0.09,0.74-0.28,1.44-0.56,2.1l1.74,1c0.44-0.96,0.73-2.01,0.84-3.1H19.93z M16.83,18.36l1.01,1.74 c0.87-0.63,1.64-1.4,2.27-2.27l-1.74-1.01C17.92,17.41,17.41,17.92,16.83,18.36z M7.17,5.64L6.17,3.89 C5.29,4.53,4.53,5.29,3.9,6.17l1.74,1.01C6.08,6.59,6.59,6.08,7.17,5.64z M5.64,16.83L3.9,17.83c0.63,0.87,1.4,1.64,2.27,2.27 l1.01-1.74C6.59,17.92,6.08,17.41,5.64,16.83z M13,7h-2v5.41l4.29,4.29l1.41-1.41L13,11.59V7z"></path></g></svg></g></svg>
+    <p class="ml-10">Wähle Automat und Zeit aus,<br>um das Angebot zu sehen</p>
+</div>
+<div id="content" class="absolute top-[40px] left-[20rem] w-[calc(100vw-20rem)]">
+    <div class="w-full px-[40px] mt-[40px] flex justify-between">
+        <div class="h-[120px] flex items-center justify-center">
+            <svg class="stencil--easier-to-select" width="48" height="48" x="0.5" y="0.5" style="opacity: 1; transform: rotate(180deg)"><defs></defs><rect x="0" y="0" width="36" height="36" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-96b96970 * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-96b96970" fill="rgb(68, 68, 68)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path></svg></g></svg>
+        </div>
+        <div class="w-60 h-[120px] rounded-lg border hover:bg-gray-50 hover:border-blue-500 duration-300">
+            <div class="grid grid-cols-2 p-2 w-full h-full">
+                <div class="text-xl">
+                    Restaurant
+                </div>
+                <div>
+                    <img src="https://www.bbbaden.ch/wp-content/uploads/2023/06/berufe_header-1.jpg"
+                         class="w-full h-full object-cover rounded-xl">
+                </div>
+            </div>
+        </div>
+        <div class="w-60 h-[120px] rounded-lg border hover:bg-gray-50 hover:border-blue-500 duration-300">
+            <div class="grid grid-cols-2 p-2 w-full h-full">
+                <div class="text-xl">
+                    Restaurant
+                </div>
+                <div>
+                    <img src="https://www.bbbaden.ch/wp-content/uploads/2023/06/berufe_header-1.jpg"
+                         class="w-full h-full object-cover rounded-xl">
+                </div>
+            </div>
+        </div>
+        <div class="w-60 h-[120px] rounded-lg border hover:bg-gray-50 hover:border-blue-500 duration-300">
+            <div class="grid grid-cols-2 p-2 w-full h-full">
+                <div class="text-xl">
+                    Restaurant
+                </div>
+                <div>
+                    <img src="https://www.bbbaden.ch/wp-content/uploads/2023/06/berufe_header-1.jpg"
+                         class="w-full h-full object-cover rounded-xl">
+                </div>
+            </div>
+        </div>
+        <div class="h-[120px] flex items-center justify-center">
+            <svg class="stencil--easier-to-select " width="48" height="48" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="36" height="36" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-96b96970 * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-96b96970" fill="rgb(68, 68, 68)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path></svg></g></svg>
+        </div>
+    </div>
+    <hr class="text-gray-200 mt-[40px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-[40px] gap-10 h-[calc(100vh-241px)] overflow-scroll">
+        <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
+            <img src="https://www.bbbaden.ch/wp-content/uploads/2023/06/berufe_header-1.jpg"
+                 class="w-full object-cover rounded-xl">
+            <p class="mt-5 text-xl">Gericht</p>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegan</span>
+            <p></p>
+            <p class="mt-5">15 CHF</p>
+            <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
+        </div>
+        <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
+            <img src="https://www.bbbaden.ch/wp-content/uploads/2023/06/berufe_header-1.jpg"
+                 class="w-full object-cover rounded-xl">
+            <p class="mt-5 text-xl">Gericht</p>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegan</span>
+            <p></p>
+            <p class="mt-5">15 CHF</p>
+            <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
+        </div>
+        <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
+            <img src="https://www.bbbaden.ch/wp-content/uploads/2023/06/berufe_header-1.jpg"
+                 class="w-full object-cover rounded-xl">
+            <p class="mt-5 text-xl">Gericht</p>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegan</span>
+            <p></p>
+            <p class="mt-5">15 CHF</p>
+            <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
+        </div>
+        <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
+            <img src="https://www.bbbaden.ch/wp-content/uploads/2023/06/berufe_header-1.jpg"
+                 class="w-full object-cover rounded-xl">
+            <p class="mt-5 text-xl">Gericht</p>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegan</span>
+            <p></p>
+            <p class="mt-5">15 CHF</p>
+            <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
+        </div>
+        <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
+            <img src="https://www.bbbaden.ch/wp-content/uploads/2023/06/berufe_header-1.jpg"
+                 class="w-full object-cover rounded-xl">
+            <p class="mt-5 text-xl">Gericht</p>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegan</span>
+            <p></p>
+            <p class="mt-5">15 CHF</p>
+            <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
+        </div>
+        <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
+            <img src="https://www.bbbaden.ch/wp-content/uploads/2023/06/berufe_header-1.jpg"
+                 class="w-full object-cover rounded-xl">
+            <p class="mt-5 text-xl">Gericht</p>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegan</span>
+            <p></p>
+            <p class="mt-5">15 CHF</p>
+            <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
+        </div>
+        <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
+            <img src="https://www.bbbaden.ch/wp-content/uploads/2023/06/berufe_header-1.jpg"
+                 class="w-full object-cover rounded-xl">
+            <p class="mt-5 text-xl">Gericht</p>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
+            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegan</span>
+            <p></p>
+            <p class="mt-5">15 CHF</p>
+            <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
+        </div>
+    </div>
+    <a href="payment.html" class="fixed bottom-6 right-6 rounded-full py-3 px-10 bg-gray-600 text-white">
+        Weiter
+    </a>
+</div>
+<script>
+    const content = document.getElementById('content')
+    const wait = document.getElementById('wait')
+    const automat = document.getElementById('automat')
+    const zeitfenster = document.getElementById('zeitfenster')
+
+    document.addEventListener("DOMContentLoaded", function() {
+        content.style.display = 'none';
+    })
+
+    automat.addEventListener('change', function() {
+        if (automat.value  !== '' && zeitfenster.value  !== '') {
+            wait.style.display = 'none';
+            content.style.display = 'block';
+        } else {
+            wait.style.display = 'block';
+            content.style.display = 'none';
+        }
+    })
+
+    document.getElementById('zeitfenster').addEventListener('change', function() {
+        if (automat.value  !== '' && zeitfenster.value  !== '') {
+            wait.style.display = 'none';
+            content.style.display = 'block';
+        } else {
+            wait.style.display = 'block';
+            content.style.display = 'none';
+        }
+    })
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+</html>
