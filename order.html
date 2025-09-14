@@ -30,24 +30,62 @@
         </div>
     </div>
 </nav>
-<div class="relative flex h-full w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5">
-    <div class="mt-20">
-        <div class="relative h-10 w-full min-w-[200px]">
+<div class="w-full h-screen max-w-[20rem] rounded-xl bg-white p-5 text-gray-700 shadow-xl">
+    <div class="space-y-4 mt-15">
+        <div>
             <label for="automat" class="block mb-2 text-sm font-medium text-gray-900">Automat</label>
-            <select id="automat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <select id="automat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 block w-full p-2.5">
                 <option value="" selected>Automat auswählen</option>
                 <option value="1">BBBaden</option>
-                <option value="1">Bahnhof</option>
+                <option value="2">Bahnhof</option>
             </select>
-
-            <label for="zeitfenster" class="block mb-2 text-sm font-medium text-gray-900 mt-5">Zeitfenster</label>
-            <select id="zeitfenster" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+        </div>
+        <div>
+            <label for="zeitfenster" class="block mb-2 text-sm font-medium text-gray-900">Zeitfenster</label>
+            <select id="zeitfenster" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 block w-full p-2.5">
                 <option value="" selected>Zeitfenster auswählen</option>
-                <option value="1">12:00 Uhr</option>
-                <option value="1">13:00 Uhr</option>
-                <option value="1">14:00 Uhr</option>
+                <option value="12">12:00 Uhr</option>
+                <option value="13">13:00 Uhr</option>
+                <option value="14">14:00 Uhr</option>
             </select>
-            <hr class="text-gray-200 mt-8 mb-8">
+            <div class="mt-2">
+                <span class="inline-block bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-sm">12 verfügbare Plätze</span>
+            </div>
+        </div>
+        <hr class="border-t border-gray-200 my-3">
+        <div>
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">Ernährungsform</h3>
+            <div class="space-y-2">
+                <label class="flex items-center gap-3 text-sm">
+                    <input type="checkbox" class="w-5 h-5 accent-black border border-gray-300 rounded-sm">
+                    <span>Fleisch</span>
+                </label>
+                <label class="flex items-center gap-3 text-sm">
+                    <input type="checkbox" class="w-5 h-5 accent-black border border-gray-300 rounded-sm">
+                    <span>Vegetarisch</span>
+                </label>
+                <label class="flex items-center gap-3 text-sm">
+                    <input type="checkbox" class="w-5 h-5 accent-black border border-gray-300 rounded-sm">
+                    <span>Vegan</span>
+                </label>
+            </div>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">Allergene</h3>
+            <div class="space-y-2">
+                <label class="flex items-center gap-3 text-sm">
+                    <input type="checkbox" class="w-5 h-5 accent-black border border-gray-300 rounded-sm">
+                    <span>Gluten</span>
+                </label>
+                <label class="flex items-center gap-3 text-sm">
+                    <input type="checkbox" class="w-5 h-5 accent-black border border-gray-300 rounded-sm">
+                    <span>Laktose</span>
+                </label>
+                <label class="flex items-center gap-3 text-sm">
+                    <input type="checkbox" class="w-5 h-5 accent-black border border-gray-300 rounded-sm">
+                    <span>Nüsse</span>
+                </label>
+            </div>
         </div>
     </div>
 </div>
@@ -66,7 +104,7 @@
                     Sushi Express
                 </div>
                 <div>
-                    <img src="img/sushi-express.jpg"
+                    <img src="img/sushi-express.jpg" alt="Referenzbild Restaurant Sushi Express"
                          class="w-full h-full object-cover rounded-xl">
                 </div>
             </div>
@@ -77,7 +115,7 @@
                     Royal Döner
                 </div>
                 <div>
-                    <img src="img/royal-doner.jpg"
+                    <img src="img/royal-doner.jpg" alt="Referenzbild Restaurant Royal Döner"
                          class="w-full h-full object-cover rounded-xl">
                 </div>
             </div>
@@ -88,7 +126,7 @@
                     Indian Palace
                 </div>
                 <div>
-                    <img src="img/indianPalace.jpeg"
+                    <img src="img/indianPalace.jpeg"  alt="Referenzbild Restaurant Indian Palace"
                          class="w-full h-full object-cover rounded-xl">
                 </div>
             </div>
@@ -100,7 +138,7 @@
     <hr class="text-gray-200 mt-[40px]">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-[40px] gap-10 h-[calc(100vh-241px)] overflow-scroll">
         <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
-            <img src="img/döner.jpg"
+            <img src="img/döner.jpg" alt='Produktbild "Döner"'
                  class="w-full object-cover rounded-xl">
             <p class="mt-5 text-xl">Döner</p>
             <p></p>
@@ -108,7 +146,7 @@
             <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
         </div>
         <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
-            <img src="img/indisch1.jpg"
+            <img src="img/indisch1.jpg" alt='Produktbild "Chicken mit Reis"'
                  class="w-full object-cover rounded-xl">
             <p class="mt-5 text-xl">Chicken mit Reis</p>
             <p></p>
@@ -116,7 +154,7 @@
             <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
         </div>
         <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
-            <img src="img/indisch2.jpg"
+            <img src="img/indisch2.jpg" alt='Produktbild "Samosas"'
                  class="w-full object-cover rounded-xl">
             <p class="mt-5 text-xl">Samosas</p>
             <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
@@ -126,7 +164,7 @@
             <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
         </div>
         <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
-            <img src="img/pizza.jpg"
+            <img src="img/pizza.jpg" alt='Produktbild "Pizza"'
                  class="w-full object-cover rounded-xl">
             <p class="mt-5 text-xl">Pizza</p>
             <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
@@ -135,7 +173,7 @@
             <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
         </div>
         <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
-            <img src="img/sushi.jpg"
+            <img src="img/sushi.jpg" alt='Produktbild "Sushi"'
                  class="w-full object-cover rounded-xl">
             <p class="mt-5 text-xl">Sushi</p>
             <p></p>
@@ -143,7 +181,7 @@
             <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
         </div>
         <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
-            <img src="img/sushi-vegan.jpg"
+            <img src="img/sushi-vegan.jpg" alt='Produktbild "Sushi Vegan"'
                  class="w-full object-cover rounded-xl">
             <p class="mt-5 text-xl">Sushi Vegan</p>
             <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
@@ -153,9 +191,9 @@
             <svg class="stencil--easier-to-select absolute right-6 bottom-6" width="22" height="22" x="0.5" y="0.5" style="opacity: 1;"><defs></defs><rect x="0" y="0" width="24" height="24" fill="transparent" class="stencil__selection-helper"></rect><style>#mq-stencil-icon-c6baeb7e * { vector-effect: non-scaling-size; }</style><g id="mq-stencil-icon-c6baeb7e" fill="rgb(0,0,0)" stroke-width="0" stroke="none" stroke-dasharray="none"><svg preserveAspectRatio="none" width="100%" viewBox="0 0 24 24" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"></path></svg></g></svg>
         </div>
         <div class="rounded-xl border w-full p-5 relative hover:bg-gray-50 hover:border-blue-500 duration-300">
-            <img src="img/dessert.webp"
+            <img src="img/dessert.webp" alt='Produktbild "Vanille-Erdbeer Dessert"'
                  class="w-full object-cover rounded-xl">
-            <p class="mt-5 text-xl">Vanille-Erdber Dessert</p>
+            <p class="mt-5 text-xl">Vanille-Erdbeer Dessert</p>
             <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegetarisch</span>
             <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">Vegan</span>
             <p></p>
